@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+
 const APP_KEY = '5009e1aa3eac24e829865f6471ae1d56'
 const divBtnOpt = {
   width: '50px',
@@ -14,15 +15,10 @@ const App = () => {
   const [locationArr, setLocationArr] = useState([])
 
   const getLocation = async id => {
-    const data = await fetch(`http://48950abe0472.ngrok.io/getdata`).then(
-      res =>{
-        return res.json();
-      }
-    )
+    const data = await fetch(`http://localhost:3000/data${id}.json`)
     console.log(data)
     const dataJSON = await data.json()
-    //setLocationArr(dataJSON.location)]
-    setLocationArr({mapX:36.350473962094654, mapY:127.3848508837152})
+    setLocationArr(dataJSON.location)]
   }
 
   const createMap = () => {
