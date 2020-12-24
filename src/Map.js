@@ -1,4 +1,4 @@
-//5009e1aa3eac24e829865f6471ae1d56
+//kakao map API KEY: 5009e1aa3eac24e829865f6471ae1d56
 
 /*global kakao */
 import React, { useEffect } from "react";
@@ -24,21 +24,27 @@ const markerdata = [
     lng: 127.15211256646381,
   },
 ];
+//마커 데이터 임시 저장
 
 export default function Map() {
   useEffect(() => {
     mapscript();
   }, []);
+//mount시 mapscript 시행, deps는 비어둠
 
   const mapscript = () => {
     let container = document.getElementById("map");
     let options = {
       center: new kakao.maps.LatLng(37.624915253753194, 127.15122688059974),
+      //초기 화면 중심 점 지정
       level: 8,
+      //확대 정도
     };
 
     //map
     const map = new kakao.maps.Map(container, options);
+    //map 객체 생성(container, options 지정)
+
     markerdata.forEach((el) => {
       // 마커를 생성합니다
       const marker = new kakao.maps.Marker({
@@ -66,6 +72,7 @@ export default function Map() {
         makeOutListener(infowindow)
       );
     });
+    
     // 인포윈도우를 표시하는 클로저를 만드는 함수입니다
     function makeOverListener(map, marker, infowindow) {
       return function () {
