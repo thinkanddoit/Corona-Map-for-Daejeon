@@ -3,7 +3,7 @@ class MapContent extends Component {
       const script = document.createElement("script");
       script.async = true;
       script.src =
-        "https://dapi.kakao.com/v2/maps/sdk.js?appkey=본인의 앱키&autoload=false";
+        "https://dapi.kakao.com/v2/maps/sdk.js?appkey=5009e1aa3eac24e829865f6471ae1d56&autoload=false";
       document.head.appendChild(script);
     }
   
