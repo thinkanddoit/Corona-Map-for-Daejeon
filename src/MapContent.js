@@ -11,7 +11,7 @@ class MapContent extends Component {
       return <MapContents id="Mymap"></MapContents>;
     }
   }
-  
+  //commit message 작성법 연습
   const MapContents = styled.div`
     width: 100%;
     height: 100%;
