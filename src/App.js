@@ -1,15 +1,76 @@
 import React, { useState, useEffect } from 'react'
-import Map from './Map'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+
+// import Map from './Map'
 
 const App = () => {
-  
+
 
   return (
     <div className="App">
-      <Map />
+      <Router>
+        <div>
+          <nav>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/OccurrenceStatus">발생 현황</Link>
+              </li>
+              <li>
+                <Link to="/ConfirmPersonInfo">확진자 정보</Link>
+              </li>
+              <li>
+                <Link to="/ConfirmPersonPathMap">확진자 이동경로 맵</Link>
+              </li>
+            </ul>
+          </nav>
+
+          {/* A <Switch> looks through its children <Route>s and
+      renders the first one that matches the current URL. */}
+          <Switch>
+            <Route path="/OccurrenceStatus">
+              <OccurrenceStatus />
+            </Route>
+            <Route path="/ConfirmPersonInfo">
+              <ConfirmPersonInfo />
+            </Route>
+            <Route path="/ConfirmPersonPathMap">
+              <ConfirmPersonPathMap />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        </div>
+      </Router>
     </div>
 
+
+
   )
+}
+
+function Home() {
+  return <h1>대전광역시 코로나 19 현황</h1>;
+}
+
+function OccurrenceStatus() {
+  return <h2>발생 현황</h2>;
+}
+
+function ConfirmPersonInfo() {
+  return <h2>확진자 정보</h2>;
+}
+
+function ConfirmPersonPathMap() {
+  return <h2>확진자 이동경로 맵</h2>;
 }
 
 export default App
