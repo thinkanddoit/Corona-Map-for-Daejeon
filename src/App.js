@@ -5,7 +5,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
-
+import Button from 'react-bootstrap/Button'//API 사용
+import 'bootstrap/dist/css/bootstrap.min.css';
 // import Map from './Map'
 
 const App = () => {
@@ -15,19 +16,36 @@ const App = () => {
     <div className="App">
       <Router>
         <div>
+
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">
+                  <Button variant="warning">
+                    <span>Home</span>
+                  </Button>
+                </Link>
               </li>
               <li>
-                <Link to="/OccurrenceStatus">발생 현황</Link>
+                <Link to="/OccurrenceStatus">
+                  <Button variant="warning">
+                    <span>발생 현황</span>
+                  </Button>
+                </Link>
               </li>
               <li>
-                <Link to="/ConfirmPersonInfo">확진자 정보</Link>
+                <Link to="/ConfirmPersonInfo">
+                <Button variant="warning">
+                    <span>확진자 정보</span>
+                  </Button>
+                </Link>
               </li>
               <li>
-                <Link to="/ConfirmPersonPathMap">확진자 이동경로 맵</Link>
+                <Link to="/ConfirmPersonPathMap">
+                <Button variant="warning">
+                    <span>확진자 이동경로 맵</span>
+                  </Button>
+                </Link>
               </li>
             </ul>
           </nav>
