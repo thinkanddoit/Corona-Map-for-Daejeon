@@ -14,6 +14,10 @@ import {
 } from 'react-bootstrap'//API 사용
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Map from './Map'
+import Home from './Home';
+import OccurrenceStatus from './OccurrenceStatus';
+import ConfirmPersonInfo from './ConfirmPersonInfo';
+import ConfirmPersonPathMap from './ConfirmPersonPathMap';
 
 const App = () => {
 
@@ -78,22 +82,6 @@ const App = () => {
 
 
   )
-}
-
-function Home() {
-  return <h1>대전광역시 코로나 19 현황</h1>;
-}
-
-function OccurrenceStatus() {
-  return <h2>발생 현황</h2>;
-}
-
-function ConfirmPersonInfo() {
-  return <h2>확진자 정보</h2>;
-}
-
-function ConfirmPersonPathMap() {
-  return <h2>확진자 이동경로 맵</h2>;
 }
 
 export default App
