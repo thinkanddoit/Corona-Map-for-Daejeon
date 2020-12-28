@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react'
+import './App.css';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
-import Button from 'react-bootstrap/Button'//API 사용
+import {
+  Button,
+  Container,
+  Row,
+  Col
+} from 'react-bootstrap'//API 사용
 import 'bootstrap/dist/css/bootstrap.min.css';
 // import Map from './Map'
 
@@ -16,39 +22,38 @@ const App = () => {
     <div className="App">
       <Router>
         <div>
-
-          <nav>
-            <ul>
-              <li>
+          <Container fluid className="container">
+            <Row>
+              <Col>
                 <Link to="/">
                   <Button variant="warning">
                     <span>Home</span>
                   </Button>
                 </Link>
-              </li>
-              <li>
+              </Col>
+              <Col>
                 <Link to="/OccurrenceStatus">
                   <Button variant="warning">
                     <span>발생 현황</span>
                   </Button>
                 </Link>
-              </li>
-              <li>
+              </Col>
+              <Col>
                 <Link to="/ConfirmPersonInfo">
-                <Button variant="warning">
+                  <Button variant="warning">
                     <span>확진자 정보</span>
                   </Button>
                 </Link>
-              </li>
-              <li>
+              </Col>
+              <Col>
                 <Link to="/ConfirmPersonPathMap">
-                <Button variant="warning">
+                  <Button variant="warning">
                     <span>확진자 이동경로 맵</span>
                   </Button>
                 </Link>
-              </li>
-            </ul>
-          </nav>
+              </Col>
+            </Row>
+          </Container>
 
           {/* A <Switch> looks through its children <Route>s and
       renders the first one that matches the current URL. */}
